@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 
+
 const Hero = () => (
   <section className="pt-20 pb-16 px-6 text-center max-w-5xl mx-auto">
     <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
