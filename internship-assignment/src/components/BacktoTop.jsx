@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronUp } from 'lucide-react';
+import React, { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { ChevronUp } from "lucide-react";
 
 const BacktoTop = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -15,14 +15,14 @@ const BacktoTop = () => {
       }
     };
 
-    window.addEventListener('scroll', toggleVisibility);
-    return () => window.removeEventListener('scroll', toggleVisibility);
+    window.addEventListener("scroll", toggleVisibility);
+    return () => window.removeEventListener("scroll", toggleVisibility);
   }, []);
 
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
-      behavior: 'smooth',
+      behavior: "smooth",
     });
   };
 
@@ -38,7 +38,10 @@ const BacktoTop = () => {
           aria-label="Back to top"
         >
           {/* Subtle bounce animation on the icon */}
-          <ChevronUp className="group-hover:-translate-y-1 transition-transform" size={24} />
+          <ChevronUp
+            className="group-hover:-translate-y-1 transition-transform"
+            size={24}
+          />
         </motion.button>
       )}
     </AnimatePresence>

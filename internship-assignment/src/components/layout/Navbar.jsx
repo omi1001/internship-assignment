@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { Menu, X, ArrowRight } from 'lucide-react';
+import React, { useState } from "react";
+import { motion } from "framer-motion";
+import { Menu, X, ArrowRight } from "lucide-react";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -17,13 +17,27 @@ const Navbar = () => {
           </span>
         </div>
         <div className="hidden md:flex items-center gap-8">
-          <a href="#features" className="text-sm font-semibold text-iim-navy hover:text-iim-gold transition-colors">Program</a>
-          <a href="#eligibility" className="text-sm font-semibold text-iim-navy hover:text-iim-gold transition-colors">Eligibility</a>
-          <button 
-  onClick={() => {
-    setIsOpen(false);
-    document.getElementById('apply')?.scrollIntoView({ behavior: 'smooth' });
-  }}  className="bg-iim-navy text-white px-6 py-2.5 rounded-full font-bold text-sm hover:bg-iim-gold text-whitetransition-all shadow-lg flex items-center gap-2">
+          <a
+            href="#features"
+            className="text-sm font-semibold text-iim-navy hover:text-iim-gold transition-colors"
+          >
+            Program
+          </a>
+          <a
+            href="#eligibility"
+            className="text-sm font-semibold text-iim-navy hover:text-iim-gold transition-colors"
+          >
+            Eligibility
+          </a>
+          <button
+            onClick={() => {
+              setIsOpen(false);
+              document
+                .getElementById("apply")
+                ?.scrollIntoView({ behavior: "smooth" });
+            }}
+            className="bg-iim-navy text-white px-6 py-2.5 rounded-full font-bold text-sm hover:bg-iim-gold text-whitetransition-all shadow-lg flex items-center gap-2"
+          >
             Apply Now <ArrowRight size={16} />
           </button>
         </div>
@@ -34,22 +48,36 @@ const Navbar = () => {
         </div>
       </div>
       {isOpen && (
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           className="md:hidden bg-white border-b border-gray-100 px-6 py-8 flex flex-col gap-6"
         >
-          <a href="#features" onClick={() => setIsOpen(false)} className="text-lg font-bold text-iim-navy">Program Features</a>
-          <a href="#eligibility" onClick={() => setIsOpen(false)} className="text-lg font-bold text-iim-navy">Eligibility</a>
-          <button 
-  onClick={() => {
-    setIsOpen(false);
-    document.getElementById('apply')?.scrollIntoView({ behavior: 'smooth' });
-  }} 
-  className="bg-iim-gold text-white py-4 rounded-xl font-bold text-lg shadow-xl transition-all duration-300 hover:bg-iim-navy hover:text-white cursor-pointer"
->
-  Apply Now
-</button>
+          <a
+            href="#features"
+            onClick={() => setIsOpen(false)}
+            className="text-lg font-bold text-iim-navy"
+          >
+            Program Features
+          </a>
+          <a
+            href="#eligibility"
+            onClick={() => setIsOpen(false)}
+            className="text-lg font-bold text-iim-navy"
+          >
+            Eligibility
+          </a>
+          <button
+            onClick={() => {
+              setIsOpen(false);
+              document
+                .getElementById("apply")
+                ?.scrollIntoView({ behavior: "smooth" });
+            }}
+            className="bg-iim-gold text-white py-4 rounded-xl font-bold text-lg shadow-xl transition-all duration-300 hover:bg-iim-navy hover:text-white cursor-pointer"
+          >
+            Apply Now
+          </button>
         </motion.div>
       )}
     </nav>

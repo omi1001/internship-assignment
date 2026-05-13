@@ -1,11 +1,11 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import Navbar from './components/layout/Navbar';
-import Hero from './components/section/Hero';
-import Features from './components/section/Features.jsx';
-import Eligibility from './components/section/Eligibility';
-import LeadForm from './components/section/LeadForm';
-import BacktoTop from './components/BacktoTop.jsx';
+import React from "react";
+import { motion } from "framer-motion";
+import Navbar from "./components/layout/Navbar";
+import Hero from "./components/section/Hero";
+import Features from "./components/section/Features.jsx";
+import Eligibility from "./components/section/Eligibility";
+import LeadForm from "./components/section/LeadForm";
+import BacktoTop from "./components/BacktoTop.jsx";
 
 /**
  * Main App Component
@@ -24,7 +24,7 @@ function App() {
 
         {/* 3. Program Features Grid [cite: 13, 14, 15, 16] */}
         <section className="bg-slate-50">
-           <Features />
+          <Features />
         </section>
 
         {/* 4. Eligibility & Important Dates  */}
@@ -42,12 +42,15 @@ function App() {
             IIM <span className="text-[#C5A059]">Sirmaur</span>
           </div>
           <div className="text-center md:text-right">
-            <p className="text-slate-300 text-sm">Questions? Contact Admissions</p>
+            <p className="text-slate-300 text-sm">
+              Questions? Contact Admissions
+            </p>
             <p className="text-[#C5A059] font-bold text-lg">+91 98765 43210</p>
           </div>
         </div>
         <div className="mt-8 text-center text-slate-400 text-xs">
-          © {new Date().getFullYear()} IIM Sirmaur Online MBA. All rights reserved.
+          © {new Date().getFullYear()} IIM Sirmaur Online MBA. All rights
+          reserved.
         </div>
       </footer>
     </div>
