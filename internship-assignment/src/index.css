@@ -1,4 +1,7 @@
 @import "tailwindcss";
+html {
+  scroll-behavior: smooth !important;
+}
 
 @theme {
   --color-iim-navy: #002147;

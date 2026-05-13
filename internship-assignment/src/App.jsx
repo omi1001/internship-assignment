@@ -5,6 +5,7 @@ import Hero from './components/section/Hero';
 import Features from './components/section/Features.jsx';
 import Eligibility from './components/section/Eligibility';
 import LeadForm from './components/section/LeadForm';
+import BacktoTop from './components/BacktoTop.jsx';
 
 /**
  * Main App Component
@@ -31,6 +32,7 @@ function App() {
 
         {/* 5. Conversion-Optimized Lead Generation Form */}
         <LeadForm />
+        <BacktoTop />
       </main>
 
       {/* Footer Footer with Contact Info */}
