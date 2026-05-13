@@ -8,8 +8,8 @@ import LeadForm from './components/section/LeadForm';
 
 /**
  * Main App Component
- * Designed for IIM Sirmaur Online MBA Landing Page [cite: 2]
- * Tech Stack: React, Tailwind CSS v4, Framer Motion [cite: 25]
+ * Designed for IIM Sirmaur Online MBA Landing Page
+ * Tech Stack: React, Tailwind CSS v4, Framer Motion
  */
 function App() {
   return (
@@ -18,7 +18,7 @@ function App() {
       <Navbar />
 
       <main>
-        {/* 2. Hero Section: Catchy Headline & Sub-headline [cite: 8, 10, 11] */}
+        {/* 2. Hero Section: Catchy Headline & Sub-headline */}
         <Hero />
 
         {/* 3. Program Features Grid [cite: 13, 14, 15, 16] */}
@@ -26,14 +26,14 @@ function App() {
            <Features />
         </section>
 
-        {/* 4. Eligibility & Important Dates [cite: 18, 19, 20] */}
+        {/* 4. Eligibility & Important Dates  */}
         <Eligibility />
 
-        {/* 5. Conversion-Optimized Lead Generation Form [cite: 22, 23] */}
+        {/* 5. Conversion-Optimized Lead Generation Form */}
         <LeadForm />
       </main>
 
-      {/* Footer Footer with Contact Info [cite: 21] */}
+      {/* Footer Footer with Contact Info */}
       <footer className="bg-[#002147] text-white py-12 px-6 border-t border-[#C5A059]/30">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="text-xl font-bold uppercase tracking-wider">

@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Monitor, GraduationCap, Calendar, Zap } from "lucide-react";
 
-// Optimized "Executive" animation settings
+// Using a custom cubic-bezier for that "weighted" feel seen on premium sites
 const cardVariants = {
   hidden: { opacity: 0, y: 30, scale: 0.95 },
   visible: (i) => ({
@@ -9,9 +9,9 @@ const cardVariants = {
     y: 0,
     scale: 1,
     transition: {
-      delay: i * 0.1, // Staggered reveal
+      delay: i * 0.1, // Staggering the entrance so cards don't hit the screen all at once
       duration: 0.8,
-      ease: [0.16, 1, 0.3, 1] // High-end cubic-bezier
+      ease: [0.16, 1, 0.3, 1] 
     }
   })
 };
@@ -38,8 +38,10 @@ const specializations = ["AI-Powered Finance", "Marketing", "Operations"];
 
 const Features = () => {
   return (
+    // scroll-mt-20 ensures the header isn't cut off when clicking nav links
     <section id="features" className="py-24 px-6 max-w-7xl mx-auto scroll-mt-20">
-      {/* Header with Smooth Fade */}
+      
+      {/* Basic header fade-in to lead the user into the section */}
       <motion.div 
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -47,38 +49,43 @@ const Features = () => {
         className="text-center mb-16"
       >
         <h2 className="text-3xl md:text-4xl font-bold text-iim-navy tracking-tight">Program Highlights</h2>
-        <p className="text-gray-500 mt-4 max-w-2xl mx-auto">Elevate your career with a specialized curriculum designed for the future of business leadership.</p>
+        <p className="text-gray-500 mt-4 max-w-2xl mx-auto">
+          Elevate your career with a specialized curriculum designed for the future of business leadership.
+        </p>
       </motion.div>
 
-      {/* Main Feature Cards with Staggered Scale-up */}
+      {/* Grid container for the main value propositions */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
         {mainFeatures.map((feature, index) => (
           <motion.div
             key={index}
-            custom={index}
+            custom={index} // Passes index to variants for staggered timing
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-50px" }}
             variants={cardVariants}
-            whileHover={{ y: -12, shadow: "0 20px 25px -5px rgb(0 0 0 / 0.1)" }}
-            className="p-8 bg-white border border-gray-100 rounded-3xl shadow-[0_10px_30px_-15px_rgba(0,0,0,0.05)] transition-shadow duration-500"
+            whileHover={{ y: -12 }} // Subtle lift on hover for better interactivity
+            className="p-8 bg-white border border-gray-100 rounded-3xl shadow-[0_10px_30px_-15px_rgba(0,0,0,0.05)] transition-shadow duration-500 hover:shadow-xl"
           >
-            <div className="mb-6 bg-slate-50 w-fit p-4 rounded-2xl ring-1 ring-gray-100">{feature.icon}</div>
+            {/* Icon wrapper with a soft background for visual focus */}
+            <div className="mb-6 bg-slate-50 w-fit p-4 rounded-2xl ring-1 ring-gray-100">
+              {feature.icon}
+            </div>
             <h3 className="text-xl font-bold text-iim-navy mb-3">{feature.title}</h3>
             <p className="text-gray-500 leading-relaxed text-sm">{feature.detail}</p>
           </motion.div>
         ))}
       </div>
 
-      {/* Specializations Bar with Glassmorphism */}
+      {/* High-contrast callout for specializations */}
       <motion.div 
         initial={{ opacity: 0, scale: 0.95 }}
         whileInView={{ opacity: 1, scale: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 1 }}
-        className="bg-iim-navy rounded-[2.5rem] p-10 md:p-16 text-white text-center shadow-2xl overflow-hidden relative"
+        className="bg-iim-navy rounded-[2.5rem] p-10 md:p-16 text-white text-center shadow-2xl relative overflow-hidden"
       >
-        {/* Decorative Background Glow for Premium feel */}
+        {/* Soft radial glow to break up the flat dark background */}
         <div className="absolute top-0 right-0 w-64 h-64 bg-iim-gold/10 blur-[100px] -z-10" />
         
         <h3 className="text-2xl font-bold mb-8 tracking-tight">Major Specializations</h3>
@@ -89,6 +96,7 @@ const Features = () => {
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5 + (index * 0.1) }}
+              // Using white/5 and backdrop-blur for a modern glassmorphism look
               className="flex items-center gap-3 bg-white/5 backdrop-blur-md px-8 py-4 rounded-2xl border border-white/10 hover:bg-white/10 transition-colors"
             >
               <Zap size={16} className="text-iim-gold" />
