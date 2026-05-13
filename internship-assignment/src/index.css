@@ -1,0 +1,11 @@
+@import "tailwindcss";
+
+@theme {
+  --color-iim-navy: #002147;
+  --color-iim-gold: #C5A059;
+}
+
+:root {
+  background-color: white;
+  color: #002147;
+}
